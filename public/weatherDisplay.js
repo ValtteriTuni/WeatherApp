@@ -1,3 +1,5 @@
+/* weatherDisplay.js */
+
 // Function to set background color based on temperature
 const setBackgroundColor = (tempCelsius) => {
     if (tempCelsius < 0) {

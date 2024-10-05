@@ -1,3 +1,8 @@
+// api.js
+
+// Importing functions for displaying weather
+import { setBackgroundColor } from './weatherDisplay.js';
+
 // Function to fetch weather data using async/await
 const fetchWeather = async () => {
   try {
@@ -27,14 +32,3 @@ const fetchWeather = async () => {
 
 // Event listener for the button click
 document.getElementById('fetch-weather-btn').addEventListener('click', fetchWeather);
-
-// Function to set background color based on temperature
-const setBackgroundColor = (tempCelsius) => {
-  if (tempCelsius < 0) {
-    document.getElementById('weather-info').style.backgroundColor = "blue";
-  } else if (tempCelsius > 20) {
-    document.getElementById('weather-info').style.backgroundColor = "red";
-  } else {
-    document.getElementById('weather-info').style.backgroundColor = "yellow";
-  }
-}

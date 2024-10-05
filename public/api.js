@@ -1,5 +1,3 @@
-// api.js
-
 // Importing functions for displaying weather
 import { setBackgroundColor } from './weatherDisplay.js';
 import { kelvinToCelcius } from './degreeConverter.js';
@@ -7,7 +5,13 @@ import { kelvinToCelcius } from './degreeConverter.js';
 // Function to fetch weather data using async/await
 const fetchWeather = async () => {
   try {
-    const response = await fetch('/api/weather'); // Call the server-side endpoint
+    const city = document.getElementById('city-input').value; // Get the city name from the input box
+    if (!city) {
+      alert("City name is required");
+      return;
+    }
+
+    const response = await fetch(`/api/weather?city=${encodeURIComponent(city)}`); // Call the server-side endpoint with the city query parameter
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }

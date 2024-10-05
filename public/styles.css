@@ -69,3 +69,14 @@ footer {
     border-radius: 10px; 
     text-align: center;
 }
+/* city input box */
+#city-input {
+    text-align: center;
+    margin: 5px;
+    width: 200px;
+    height: 30px;
+    font-size: 16px; 
+    padding: 5px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}

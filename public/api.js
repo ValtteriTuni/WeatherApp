@@ -2,6 +2,7 @@
 
 // Importing functions for displaying weather
 import { setBackgroundColor } from './weatherDisplay.js';
+import { kelvinToCelcius } from './degreeConverter.js';
 
 // Function to fetch weather data using async/await
 const fetchWeather = async () => {
@@ -14,16 +15,23 @@ const fetchWeather = async () => {
 
     // Log the json data
     console.log(data);
-    // Access the current temperature from the 'main' section
-    const temp = data.main.temp;
 
-    // Convert Kelvin to Celsius if needed
-    const tempCelsius = temp - 273.15;
+    // Access the current realTemperature from the 'main' section and convert it to celcius.
+    const realTemp = data.main.temp;
+    const realTempInCelsius = kelvinToCelcius(realTemp);
 
-    // Call the setBackgroundColor function on the temperature
-    setBackgroundColor(tempCelsius);
-    // Display the temperature on the webpage
-    document.getElementById('weather-info').innerText = `Current Temperature: ${tempCelsius.toFixed(2)}°C`;
+    // Location
+    const location = data.name;
+
+    // Access the feels like temp and convert it to celcius.
+    const feelsLikeTemp = data.main.feels_like;
+    const feelsLikeCelcius = kelvinToCelcius(feelsLikeTemp);
+
+    // Call the setBackgroundColor function on the realTemperature
+    setBackgroundColor(realTempInCelsius);
+    // Display the realTemperature on the webpage
+    document.getElementById('current-temp').innerText = `Current temperature in ${location}: ${realTempInCelsius.toFixed(2)}°C`;
+    document.getElementById('feels-like').innerText = `Feels like: ${feelsLikeCelcius.toFixed(2)}°C`;
   } catch (error) {
     console.error('Error fetching weather data:', error);
     document.getElementById('weather-info').innerText = 'Error fetching weather data';

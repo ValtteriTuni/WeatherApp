@@ -9,11 +9,25 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Weather App</h1>
-  <button id="fetch-weather-btn">Fetch Weather</button>
-  <div id="weather-info">
-    <!-- Weather information will be displayed here -->
-  </div>
+  <!-- header -->
+  <header>
+      <h1>Weather App</h1>
+  </header>
+
+  <!-- main content -->
+  <section>
+    <div class="box">
+      <button id="fetch-weather-btn">Fetch Weather</button>
+      <div id="weather-info">
+        <div id="current-temp"></div>
+        <div id="feels-like"></div>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+  <footer>
+    <p>© Weather App. All rights reserved. Developed by Valtteri.</p>
+  </footer>
 
   <script type="module" src="api.js"></script>
 </body>

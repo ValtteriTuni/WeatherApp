@@ -1,5 +1,71 @@
+/* styles.css */
+
+/* TODO:
+    clean up the styling
+*/
+/* header */
+header {
+    background-color: #bbc7c2;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px 0;
+}
+/* h1 */
+h1 {
+    text-align: center;
+    font-size: 3em;
+}
+/* body */
+body {
+    background-color:#bbc7c2;
+    margin: 0;
+    height: 100vh;
+    display: flex; 
+    flex-direction: column;
+}
+/* section */
+section {
+    flex: 1;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+}
+/* footer */
+footer {
+    background-color:#bbc7c2; /* Background color for footer */
+    color: rgb(0, 0, 0); /* Text color */
+    text-align: center; /* Center text */
+    padding: 10px 0; /* Padding for the footer */
+}
+
+/* button */
+#fetch-weather-btn {
+    background-color: rgba(0, 255, 255, 0.637);
+    font-size: 2em;
+    padding: 20px 40px; 
+    border: 5px; 
+    border-radius: 20px; 
+    cursor: pointer; 
+    transition: background-color 0.3s;
+}
+
+#fetch-weather-btn:hover {
+    background-color: rgb(20, 144, 153);
+}
+
+/* weather info */
 #weather-info {
-    padding: 20px;
     margin-top: 20px;
-    color: rgb(29, 78, 9);
+    font-size: 1.5em;
+}
+
+/* box that has the weather info and button */
+.box {
+    width: 300px; 
+    height: 300px;
+    padding: 30px; 
+    background-color: #bbc7c2;
+    border-radius: 10px; 
+    text-align: center;
 }

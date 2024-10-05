@@ -2,13 +2,15 @@
 
 // Function to set background color based on temperature
 const setBackgroundColor = (tempCelsius) => {
+    const weatherInfoBox = document.querySelector('.box');
     if (tempCelsius < 0) {
-      document.getElementById('weather-info').style.backgroundColor = "blue";
+        weatherInfoBox.style.backgroundColor = "blue";
     } else if (tempCelsius > 20) {
-      document.getElementById('weather-info').style.backgroundColor = "red";
+        weatherInfoBox.style.backgroundColor = "red";
     } else {
-      document.getElementById('weather-info').style.backgroundColor = "yellow";
+        weatherInfoBox.style.backgroundColor = "yellow";
     }
-  }
+}
+
 
   export {setBackgroundColor};
